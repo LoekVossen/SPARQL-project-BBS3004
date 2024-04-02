@@ -1,8 +1,9 @@
 PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
  
 SELECT  ?developmentphase (count (distinct ?chemblcompound) as ?n)
-WHERE { VALUES ?developmentphase {1.0 2.0 3.0 4.0}
+WHERE {
   ?drugindication chembl:hasMeshHeading "Osteoarthritis" ; 
                   chembl:hasMolecule ?chemblcompound .
   ?chemblcompound chembl:highestDevelopmentPhase ?developmentphase .
-      } ORDER BY ASC (?developmentphase)
+  VALUES ?developmentphase {1.0 2.0 3.0 4.0}
+      		} ORDER BY DESC (?developmentphase)
