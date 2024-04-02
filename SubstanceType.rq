@@ -5,4 +5,4 @@ WHERE {
   ?drugindication chembl:hasMeshHeading "Osteoarthritis" ; 
                   chembl:hasMolecule ?chemblcompound .
   ?chemblcompound chembl:substanceType ?substancetype .
-            } ORDER BY ASC (?substancetype)
+            } ORDER BY DESC (?nchemblcompound)
