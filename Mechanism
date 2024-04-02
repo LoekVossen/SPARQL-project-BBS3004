@@ -1,0 +1,9 @@
+PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
+
+SELECT ?mechanismdescription (count (?chemblcompound) as ?nchemblcompound)
+WHERE {
+  ?drugindication chembl:hasMeshHeading "Osteoarthritis" ; 
+                  chembl:hasMolecule ?chemblcompound .
+  ?chemblcompound chembl:hasMechanism ?mechanism .
+  ?mechanism chembl:mechanismDescription ?mechanismdescription .
+            } ORDER BY ASC (?mechanismdescription)
