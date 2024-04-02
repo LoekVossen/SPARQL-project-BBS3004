@@ -1,0 +1,22 @@
+PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
+
+SELECT distinct ?targetLabel ?molLabel ?assayLabel ?type ?value WHERE {
+
+  ?assay  chembl:hasTarget ?target.
+  
+  ?activity chembl:hasAssay  ?assay.
+  ?activity chembl:hasMolecule ?molecule .
+  
+  ?molecule chembl:hasMechanism ?mechanism .
+  ?mechanism chembl:mechanismDescription "ADAMTS5 inhibitor" .
+  ?molecule chembl:hasDrugIndication ?drugindication .
+  ?drugindication chembl:hasMeshHeading "Osteoarthritis" .
+
+  ?target rdfs:label ?targetLabel.
+  ?molecule rdfs:label ?molLabel.
+  ?assay  rdfs:label ?assayLabel.
+  
+  ?activity chembl:type ?type.
+  ?activity chembl:standardValue ?value.
+
+}
