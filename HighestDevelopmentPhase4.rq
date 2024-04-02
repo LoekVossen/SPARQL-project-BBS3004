@@ -1,0 +1,8 @@
+PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
+
+SELECT (count (?chemblcompound4) as ?nchemblcompound4)
+WHERE {
+  ?drugindication chembl:hasMeshHeading "Osteoarthritis" ; 
+                  chembl:hasMolecule ?chemblcompound4 .
+  ?chemblcompound4 chembl:highestDevelopmentPhase 4.0 .
+            }
