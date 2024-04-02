@@ -1,0 +1,11 @@
+PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?targettitle (count (?chemblcompound) as ?nchemblcompound)
+WHERE {
+  ?drugindication chembl:hasMeshHeading "Osteoarthritis" ; 
+                  chembl:hasMolecule ?chemblcompound .
+  ?chemblcompound chembl:hasMechanism ?mechanism .
+  ?mechanism chembl:hasTarget ?target .
+  ?target dcterms:title ?targettitle .
+  } ORDER BY ASC (?targettitle)
