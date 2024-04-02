@@ -1,8 +1,0 @@
-PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
-
-SELECT (count (?chemblcompound2) as ?nchemblcompound2)
-WHERE {
-  ?drugindication chembl:hasMeshHeading "Osteoarthritis" ; 
-                  chembl:hasMolecule ?chemblcompound2 .
-  ?chemblcompound2 chembl:highestDevelopmentPhase 2.0 .
-            }
