@@ -6,4 +6,4 @@ WHERE {
                   chembl:hasMolecule ?chemblcompound .
   ?chemblcompound chembl:hasMechanism ?mechanism . 
   ?mechanism chembl:mechanismActionType ?mechanismactiontype .
-            } ORDER BY ASC (?mechanismactiontype)
+            } ORDER BY DESC (?nchemblcompound)
