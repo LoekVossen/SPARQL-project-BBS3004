@@ -8,4 +8,4 @@ WHERE {
   ?chemblcompound chembl:hasMechanism ?mechanism .
   ?mechanism chembl:hasTarget ?target .
   ?target dcterms:title ?targettitle .
-  } ORDER BY ASC (?targettitle)
+  			} ORDER BY DESC (?nchemblcompound)
